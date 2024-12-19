@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const mhs1 = {
+            nama: "Angga Dwi Prasetyo",
+            nim: "0110124213",
+            prodi:{
+                "kode": "SI",
+                "nama": "Sistem Informasi"
+            },
+        
+        }
+        function tampilkan(){
+            let area = document.getElementById("nf");
+            area.innerHTML = "Nama Mahasiswa : " + mhs1.nama + "<br>";
+            area.innerHTML += "Prodi : " + mhs1.prodi.nama + "<br>";
+        }
+    </script>
+</head>
+<body onload="tampilkan()">
+    <div id="nf"></div>
+</body>
+</html>

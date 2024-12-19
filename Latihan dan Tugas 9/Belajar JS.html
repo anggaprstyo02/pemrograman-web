@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let bil1 = 10;
+        let bil2 = 20;
+        let hasil = bil1 + bil2;
+        console.log("Jumlah dari bilangan 1" + bil1 + "bilangan 2" +bil2+ "adalah" + hasil);
+        
+        function jumlahkan(){
+            let bil1 = document.getElementById("bil1").value
+            let bil2 = document.getElementById("bil2").value
+            let area_hasil =document.getElementById("hasil");
+        area_hasil.innerHTML =hasil;
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Bilangan 1 :
+        <input type="number" id="bil1" name="bil1" value="100">
+        <br>
+        Bilangan 2 :
+        <input type="number" id="bil2" name="bil2" value="200">
+        <br>
+        <input type="button" value="+" onclick="Jumlahkan()">
+        <input type="button" value="-" onclick="Jumlahkan()">
+        <br>
+        Hasil : <span id="hasil"></span>
+    </form>
+</body>
+</html>

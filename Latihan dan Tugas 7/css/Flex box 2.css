@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+header, article, aside, nav, footer{
+  padding: 1rem;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header, footer{
+  height: 10vh;
+  background-color: khaki;
+}
+.container{
+  display: flex;
+  flex-grow: 1;
+}
+aside{
+  background-color: pink;
+  flex: 0 0 20vw;
+}
+nav{
+  background-color: aqua;
+  flex: 0 0 20vw;
+}
+article{
+  flex-grow: 1;
+  background-color: beige;
+}

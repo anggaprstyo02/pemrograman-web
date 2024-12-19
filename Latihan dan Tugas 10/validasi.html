@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Tiket</title>
+    <script>
+        function makeRed(){
+            let areakirim = document.getElementById("kirim");
+            areakirim.style.background="red";
+    }
+        function makeBlack(){
+            let areakirim = document.getElementById("kirim");
+            areakirim.style.background="black";
+    }
+    </script>
+    <style>
+        h2 {
+            text-align: center;
+            border-radius: 1em;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: violet;
+            background-color: black;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 50%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 1em;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2 id="kirim" onmouseover="makeRed()" onmouseout="makeBlack()">Form Pemesanan Tiket</h2>
+<form id="ticketForm">
+    <label for="name">Nama Pelanggan:</label>
+    <input type="text" id="name" name="name" style="background-color: black; color: violet;" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" style="background-color: black; color: violet;" required>
+
+    <label for="departureTime">Jam Keberangkatan:</label>
+    <input type="time" id="departureTime" name="departureTime" style="background-color: black; color: violet;" required>
+
+    <label for="destination">Tujuan Berangkat:</label>
+    <input type="text" id="destination" name="destination" style="background-color: black; color: violet;" required>
+
+    <label for="ticketCount">Jumlah Tiket:</label>
+    <input type="number" id="ticketCount" name="ticketCount" min="1" style="background-color: black; color: violet;" required>
+    <p></p>
+    <button type="submit" style="background-color: black; color: violet; border: 1px solid violet;">Kirim</button>
+</form>
+
+<div id="output"></div>
+
+<script>
+    document.getElementById("ticketForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Mencegah pengiriman form
+
+        // Mengambil nilai dari input
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let departureTime = document.getElementById("departureTime").value;
+        let destination = document.getElementById("destination").value.trim();
+        let ticketCount = document.getElementById("ticketCount").value;
+
+        // Validasi
+        if (name === "") {
+            alert("Nama pelanggan tidak boleh kosong!");
+            return;
+        }
+        if (!validateEmail(email)) {
+            alert("Email tidak valid!");
+            return;
+        }
+        if (departureTime === "") {
+            alert("Jam keberangkatan tidak boleh kosong!");
+            return;
+        }
+        if (destination === "") {
+            alert("Tujuan berangkat tidak boleh kosong!");
+            return;
+        }
+        if (ticketCount < 1) {
+            alert("Jumlah tiket harus lebih dari 0!");
+            return;
+        }
+        alert("Form berhasil diterima! :)");
+
+        // Jika semua validasi lulus, tampilkan output
+        let output = `
+            <h3>Detail Pemesanan Tiket</h3>
+            <marquee><p><strong>Nama Pelanggan:</strong> ${name}</p></marquee>
+            <marquee><p><strong>Email:</strong> ${email}</p></marquee>
+            <marquee><p><strong>Jam Keberangkatan:</strong> ${departureTime}</p></marquee>
+            <marquee><p><strong>Tujuan Berangkat:</strong> ${destination}</p></marquee>
+            <marquee><p><strong>Jumlah Tiket:</strong> ${ticketCount}</p></marquee>
+        `;
+        
+        document.getElementById("output").innerHTML = output;
+        document.getElementById("output").style.display = "block"; // Tampilkan output
+    });
+
+    function validateEmail(email) {
+        let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+    
+</script>
+
+</body>
+</html>
