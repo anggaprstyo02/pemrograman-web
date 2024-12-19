@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Biaya Parkir</title>
+</head>
+<style>
+    body{
+        background-image: url("download.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+</style>
+<body>
+    <h1>Menghitung Biaya Parkir</h1>
+    <label for="masuk">Jam Masuk</label>
+    <input type="time" id="masuk" onchange="parkir()"><br>
+
+    <label for="keluar">Jam Keluar</label>
+    <input type="time" id="keluar" onchange="parkir()"><br>
+
+    <p>Kendaraan anda parkir selama <span id="lamaParkir">0</span> jam</p>
+    <p>Biaya parkir anda sebesar Rp. <span id="biayaParkir">0</span></p>
+
+    <script>
+        function parkir() {
+            let masuk = document.getElementById('masuk').value;
+            let keluar = document.getElementById('keluar').value;
+
+            let jamMasuk = parseInt(masuk.split(':')[0]);
+            let menitMasuk = parseInt(masuk.split(':')[1]);
+
+            let jamKeluar = parseInt(keluar.split(':')[0]);
+            let menitKeluar = parseInt(keluar.split(':')[1]);
+
+            // Calculate the parking duration in minutes
+            let totalMasuk = jamMasuk * 60 + menitMasuk;
+            let totalKeluar = jamKeluar * 60 + menitKeluar;
+
+            // Handle the case when the parking spans across midnight
+            if (totalMasuk > totalKeluar) {
+                totalKeluar += 24 * 60;  // Add 24 hours to the keluar time if it passes midnight
+            }
+
+            let lamaParkir = totalKeluar - totalMasuk;  // Duration in minutes
+            let lamaParkirJam = lamaParkir / 60;  // Duration in hours
+
+            let bayarParkir = 0;
+            if (lamaParkirJam <= 2) {
+                bayarParkir = 3000;
+            } else if (lamaParkirJam > 2) {
+                bayarParkir = 3000 + (lamaParkirJam - 2) * 1000;
+            }
+
+            // Display the results
+            document.getElementById('lamaParkir').innerHTML = lamaParkirJam.toFixed(2);
+            document.getElementById('biayaParkir').innerHTML = bayarParkir;
+        }
+    </script>
+</body>
+</html>

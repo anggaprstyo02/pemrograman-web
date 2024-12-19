@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Form Pemesanan WorkShirt</title>
+</head>
+<body>
+            
+ <fieldset style="background-color: grey;" width="100%">
+ <div style="text-align:center">
+   <h1>FORM WORKSHIRT PINTU 2 BILLIARD</h1><hr>
+ </div> 
+ <table border="15">
+   <tr>
+    <td><img src="jpg/workshirt.jpg"width="400"></td>
+   </tr>
+ </table>
+   <Form action="thankyou.html">
+    <h4>Isi Formulir di bawah</h4>
+    
+    <label for="nama">Title here :</label><br>
+    <textarea name="instruction" id="instruction"placeholder="Workshirt Pintu 2 Billiard" cols="50" rows="1"></textarea><br>
+    
+    <label for="nama">Nama Lengkap :</label><br>
+    <textarea type="text" id="nama" cols="50" rows="1"></textarea><br>
+    
+    <label for="email">Send to Email :</label><br>
+    <textarea type="email" id="email" cols="50" rows="1"></textarea><br>
+    
+    <label for="phone">Send to Mobile Phone :</label><br>
+    <textarea type="number" id="number" cols="50" rows="1"></textarea><br>
+    
+    <label for="address">Alamat :</label><br>
+    <textarea name="address" id="address" cols="50" rows="3"></textarea><br>
+    
+    <label for="instruction">Note :</label><br>
+    <textarea name="instruction" id="instruction"placeholder="No more 100 words" cols="50" rows="1"></textarea><br>
+    
+        <p></p>Bank: <input type="text" list="bank" name="bank"><br>
+
+        <datalist id="bank">
+          <option value="HSBC"></option>
+           <option value="BCA"></option>
+           <option value="BNI"></option>
+           <option value="BRI"></option>
+        </datalist><br>
+        
+        <label for="accno">Account Number :</label></div><br>
+
+        <textarea type="text" name="accno" id="accno" placeholder="123-456-789-0" cols="50" rows="1"></textarea>
+    
+   <label><h4>Choose Size<h4></label><br>
+   
+     <input type="checkbox" name="Toppings">S<br>
+     <input type="checkbox" name="Toppings">M<br>
+     <input type="checkbox" name="Toppings">L<br>
+     <input type="checkbox" name="Toppings">XL<br>
+     <input type="checkbox" name="Toppings">XXL<br>
+     <br>
+     <input type="submit" value="Agree">
+     <input type="reset" value="Cancel">
+     
+</fieldset>
+</body>
+</html>  

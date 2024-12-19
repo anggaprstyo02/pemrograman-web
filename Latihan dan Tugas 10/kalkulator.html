@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator sederhana</title>
+</head>
+<style>
+    body{
+        color: violet;
+        background-color: black;
+    }
+</style>
+<body>
+    <marquee direction="right"><h1>Kalkulator sederhana</h1></marquee>
+    <label for="bilangan1">bilangan 1 :</label>
+    <input type="number" name="bilangan1" id="bilangan1" style="background-color: black; color: violet;">
+    <br>
+    <label for="bilangan2">bilangan 2 :</label>
+    <input type="number" name="bilangan2" id="bilangan2" style="background-color: black; color: violet;">
+    <br>
+    <label for="">Pilih Operasi Aritmatika :</label>
+    <select name="operasi" id="operasi" style="background-color: black; color: violet;">
+        <option value="">Silahkan pilih</option>
+        <option value="tambah">+</option>
+        <option value="kurang">-</option>
+        <option value="bagi">/</option>
+        <option value="kali">*</option>
+        <option value="pangkat">**</option>
+    </select><br>
+    <button onclick="kalkulator()" style="background-color: black; color: violet;">Hitung</button>
+    <p>Hasil perhitungan : <span id="hasil">0</span></p>
+    <script>
+        function kalkulator (){
+            let bilangan1 = parseInt(document.getElementById('bilangan1').value)
+            let bilangan2 = parseInt(document.getElementById('bilangan2').value)
+            let operasi = document.getElementById('operasi').value
+            console.log('bilangan1, bilangan2, operasi');
+
+            switch (operasi) {
+                case "tambah":
+                    hasil = bilangan1 + bilangan2
+                    break;
+                case "kurang":
+                    hasil = bilangan1 - bilangan2
+                    break;
+                case "bagi":
+                    hasil = bilangan1 / bilangan2
+                    break;
+                case "kali":
+                    hasil = bilangan1 * bilangan2
+                    break;
+                    case "pangkat":
+                    hasil = bilangan1 ** bilangan2
+                    break;
+                default:
+                    break;
+            }
+            document.getElementById('hasil').innerHTML = hasil
+        }
+    </script>
+    <audio controls>
+        <source src="Peggy Gou - (It Goes Like) Nanana - Official Video.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>

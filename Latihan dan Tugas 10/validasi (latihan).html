@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validasi Tiket Keberangkatan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Form Pemesanan Tiket</h2>
+<form id="ticketForm">
+    <label for="name">Nama Pelanggan:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="departureTime">Jam Keberangkatan:</label>
+    <input type="time" id="departureTime" name="departureTime" required>
+
+    <label for="destination">Tujuan Berangkat:</label>
+    <input type="text" id="destination" name="destination" required>
+
+    <label for="ticketCount">Jumlah Tiket:</label>
+    <input type="number" id="ticketCount" name="ticketCount" min="1" required>
+
+    <button type="submit">Kirim</button>
+</form>
+
+<script>
+    document.getElementById("ticketForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Mencegah pengiriman form
+
+        // Mengambil nilai dari input
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let departureTime = document.getElementById("departureTime").value;
+        let destination = document.getElementById("destination").value.trim();
+        let ticketCount = document.getElementById("ticketCount").value;
+
+        // Validasi
+        if (name === "") {
+            alert("Nama pelanggan tidak boleh kosong!");
+            return;
+        }
+        if (!validateEmail(email)) {
+            alert("Email tidak valid!");
+            return;
+        }
+        if (departureTime === "") {
+            alert("Jam keberangkatan tidak boleh kosong!");
+            return;
+        }
+        if (destination === "") {
+            alert("Tujuan berangkat tidak boleh kosong!");
+            return;
+        }
+        if (ticketCount < 1) {
+            alert("Jumlah tiket harus lebih dari 0!");
+            return;
+        }
+
+        // Jika semua validasi lulus, tampilkan pesan sukses
+        alert("Form berhasil dikirim!");
+        // Di sini Anda bisa menambahkan kode untuk mengirim data ke server
+    });
+
+    function validateEmail(email) {
+        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+</script>
+
+</body>
+</html>

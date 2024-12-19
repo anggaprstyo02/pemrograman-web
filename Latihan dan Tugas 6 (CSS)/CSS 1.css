@@ -1,0 +1,70 @@
+.box1{
+  width: 99%;
+  height: 200px;
+  float: left;
+  border: 3px solid;
+  background-color: white;
+  color: black;
+  margin: auto 6px;
+  margin-top: 10px;
+}
+.box2{
+  width: 20%;
+  height: 300px;
+  float: left;
+  border: 3px solid;
+  background-color: white;
+  color: black;
+  margin: auto 9px;
+  margin-top: 50px;
+}
+.box3{
+  width: 76%;
+  height: 300px;
+  float: right;
+  border: 3px solid;
+  background-color: white;
+  color: black;
+  margin: auto 9px;
+  margin-top: 50px;
+}
+.box4{
+  width: 20%;
+  height: 300px;
+  float: left;
+  border: 3px solid;
+  background-color: white;
+  color: black;
+  margin: auto 9px;
+  margin-top: 50px;
+}
+.box5{
+  width: 76%;
+  height: 300px;
+  float: right;
+  border: 3px solid;
+  background-color: white;
+  color: black;
+  margin: auto 9px;
+  margin-top: 50px;
+}
+.box1:nth-child(1){
+  background-color: lightseagreen;
+  color: black;
+}
+.box2:nth-child(1){
+  background-color: yellow;
+  color: black;
+}
+.box3:nth-child(2){
+  background-color: darkorange;
+  color: black;
+}
+.box4:nth-child(1){
+  background-color: yellow;
+  color: black;
+}
+.box5:nth-child(2){
+  background-color: lightblue;
+  color: black;
+}

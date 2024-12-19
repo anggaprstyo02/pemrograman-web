@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat AjaAPP</title>
+</head>
+<style>
+    .container {
+        border: 1px solid black;
+        width: 300px;
+    }
+    .chatbox {
+        height: 200px;
+    }
+    .chatbox-input {
+        width: 80%;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="chatbox" id="chatbox">
+        </div>
+        <div class="chatbox-footer"></div>
+            <input type="text" name="chatbox-input" id="chat" placeholder="masukin pesan kamu...">
+            <button onclick="newChat()">kirim</button>
+    </div>
+    <script>
+        function newChat(){
+            let chatbox = document.getElementById("chatbox")
+            let chat = document.getElementById("chat")
+
+            let chatElemen = document.createElement("div")
+            chatElemen.textContent = chat.value
+            chatbox.appendChild(chatElemen)
+            chat.value = ""
+        }
+    </script>
+    <br>
+    <audio controls>
+        <source src="Peggy Gou - (It Goes Like) Nanana - Official Video.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        function otentikasi() {
+            const USERNAME = "anggaganteng"
+            const PASSWORD = "angga"
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            if (username == USERNAME&&password == PASSWORD) {
+                alert("Login berhasil");
+                window.location.href = "../latihan 2/biodata.html";
+            } else {
+                alert("Login gagal");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="../latihan 2/biodata.html" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <button type="submit" onclick="otentikasi()">Login </button>
+    </form>
+</body>
+</html>

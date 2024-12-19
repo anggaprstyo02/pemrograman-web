@@ -1,0 +1,88 @@
+.box1{
+  width: 20%;
+  height: 100px;
+  float: left;
+  border: 1px solid;
+  background-color: white;
+  color: black;
+  margin: auto 9px;
+  margin-top: 10px;
+}
+.box2{
+  width: 78%;
+  height: 100px;
+  float: left;
+  border: 1px solid;
+  background-color: white;
+  color: black;
+  margin: auto 2px;
+  margin-top: 10px;
+}
+.box3{
+  width: 20%;
+  height: 700px;
+  float: left;
+  border: 1px solid;
+  background-color: white;
+  color: black;
+  margin: auto 9px;
+  margin-top: 10px;
+  margin-right: -28px;
+}
+.box4{
+  width: 962px;
+  height: 700px;
+  float: left;
+  border: 1px solid;
+  background-color: white;
+  color: black;
+  margin: auto 2px;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 35px;
+}
+.box5{
+  width: 20%;
+  height: 700px;
+  float: right;
+  border: 1px solid;
+  background-color: white;
+  color: black;
+  margin: auto 9px;
+  margin-top: 10px;
+  margin-left: -40px;
+}
+.box6{
+  width: 99%;
+  height: 90px;
+  float: right;
+  border: 1px solid;
+  background-color: white;
+  color: black;
+  margin: auto 9px;
+  margin-top: 10px;
+}
+.box1:nth-child(1){
+  background-color: yellow;
+  color: black;
+}
+.box2:nth-child(2){
+  background-color: darkorange;
+  color: black;
+}
+.box3:nth-child(1){
+  background-color: lightseagreen;
+  color: black;
+}
+.box4:nth-child(2){
+  background-color: azure;
+  color: black;
+}
+.box5:nth-child(3){
+  background-color: lightblue;
+  color: black;
+}
+.box6:nth-child(4){
+  background-color: blue;
+  color: black;
+}
