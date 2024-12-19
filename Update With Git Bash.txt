@@ -1,0 +1,5 @@
+#ketika sudah memakai git
+
+git add .
+git commit -m "text bebas"
+git push -u origin master/main

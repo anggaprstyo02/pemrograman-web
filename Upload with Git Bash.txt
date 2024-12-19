@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "Text Bebas"
+git branch -M main
+git remote add origin "masukkan link repository"
+git push -u origin main
